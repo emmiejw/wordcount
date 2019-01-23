@@ -1,0 +1,25 @@
+<header>
+    <a href="{% url 'about' %}">About Word Count</a>
+</header>
+<center>
+    <h1>There are {{ count }} words in your text</h1>
+
+    <h2>Your text:</h2>
+    <b>"</b>
+        {{ fulltext }}
+    <b>"</b>
+    <br>
+      
+    <h2>Word Count</h2>
+    {% for word, counttotal in sortedwords %}
+
+    <b>{{ word }}</b> -  {{ counttotal }}
+    
+    <br>
+    {% endfor %}
+    <br>
+    <button type="submit">
+        <a href="{% url 'home' %}">Count a different text</a>
+    </button>
+    
+</center>
